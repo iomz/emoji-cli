@@ -159,6 +159,14 @@ emoji::cli() {
         _BUFFER="${emoji}"
     fi
 
+    case ${OSTYPE} in
+        darwin*)
+            echo ${emoji} | pbcopy
+            ;;
+        linux*)
+            ;;
+    esac
+
     if [[ -n "$_RBUFFER" ]]; then
         BUFFER=$_BUFFER$_RBUFFER
     else
